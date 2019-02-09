@@ -1,31 +1,39 @@
 \documentclass[12pt]{article}
 \usepackage{parskip}
+\usepackage[superscript, biblabel]{cite}
 \begin{document}
-The student is to work on developing the Very Accurate Multiresolution
-Python Routines (VAMPyR). VAMPyR is a high level python interface to
-the MRCPP code, developed at the chemistry department at UiT.
 
-Pybind11 is used to expose the C++ routines from mrcpp into python.
-The student is to expand the capabilities of vampyr. This can be
-done by selecting one or several of these independent tasks:
+The Very Accurate Multiresolution Python Routines (VAMPyR\cite{vampyr})
+is a Python package built on top of MRCPP\cite{mrcpp}. MRCPP is a program
+package for multi-resolution analysis using MultiWavelets
+(for instance, Frediani et al\cite{frediani2013fully})
+developed in modern C++ with OpenMP parallelisation.
+This enables fast coding in Python with even faster
+running parallel C++ routines in the background. This combined with
+powerful Python packages such as NumPy\cite{numpy} and SciPy\cite{SciPy}
+makes it an extremely powerful tool for prototyping ideas, that can be implemented
+into MRChem\cite{mrchem}. To summarize, VAMPyR can be used to prototype
+new ideas. Then the VAMPyR implementation can be used as a reference when
+finished product is being implemented into MRChem\cite{mrchem}. Where it can
+be used to study molecular or crystal like properties. In the end reducing
+the time between the idea and the publication. To make VAMPyR attractive
+for chemists is a manual containing good documentation and a thorough tutorial
+of how to utilize VAMPyR.
 
-1. Make the code structure in VAMPyR, mirror the code structure
-   in MRCPP.
+The tutorial is to be implemented in Jupyter Notebooks, which will
+give an interactive and, try for yourself and see of it works,
+introduciton to VAMPyR.
+The tutorial should contain examples of energy calculations using
+both Hartree-Fock (HF) and Density Functional Theory (DFT), both on
+molecular and crystalline(@Luca usikker på ordet der) systems.
 
-2. Import functionallity from the MRCHEM code similar to how it is
-   done with MRCPP.
+The work will conclude with a poster presentation at the ISTCP
+2019\cite{istcp} in Tromso.
 
-3. Solve partial differential equations or chemistry problems using VAMPYR,
-   and Jupyter Notebooks that can be used as code examples in the
-   documentation, in addition to being used as tests of the code.
-   This could also include code examples that can be used in
-   teaching.
+VAMPyR is interfaced to Python and it works well
+with the powerful and well established Python packages
 
-4. Publish the code on the Python Package Index (PyPI).
 
-To deal with these challanges it's required that the student
-has some experience with Python or C/C++. Familiarity with
-git, cmake, jupyter notebooks or Green's functions is an advantage but not
-an requirement.
-
+\bibliographystyle{unsrt}
+\bibliography{ref.bib}
 \end{document}

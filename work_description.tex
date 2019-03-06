@@ -1,10 +1,17 @@
 \documentclass[12pt]{article}
 \usepackage{parskip}
 \usepackage[superscript, biblabel]{cite}
-\usepackage{acronym}
+\usepackage[nolist]{acronym}
 
 \begin{acronym}
   \acro{DFT}{Density Functional Theory}
+  \acro{HF}{Hartree Fock}
+  \acro{SCF}{self-consistent field}
+  \acro{MW}{Multiwavelet}
+  \acro{MRCPP}{MultiResolution Computation Program Package}
+  \acro{MRChem}{MultiResolution Chemistry}
+  \acro{VAMPyR}{Very Accurate Multiresolution Python Routines}
+  \acro{KS}{Kohn-Sham}
 \end{acronym}
 
 \begin{document}
@@ -17,40 +24,64 @@
 
 A recent development in quantum chemistry is the use real-space grid
 methods to achieve high precision results within the framework of
-\ac{DFT}. One such method makes use of Multiwavelet as a basis\cite{}
-and is curently being used and further developed at the Hylleraas
-centre in Tromsø in the group of Ass.~Prof.~Luca Frediani.
+\ac{DFT}. One such method makes use of \ac{MW} as a
+basis\cite{harrison2003multiresolution}
+and is currently being used and further developed at the Hylleraas
+center in Tromsø in the group of Ass.~Prof.~Luca Frediani.
+
+The group is involved in developing three codes. The \ac{MRChem} code, which is
+a numerical real-space code for molecular electronic structure calculations
+within the \ac{SCF} approximations of quantum chemistry. This is built on
+the \ac{MRCPP} code, which is a general purpose numerical mathematics library
+based on multiresolution analysis and the \ac{MW} basis which provide
+low-scaling algorithms as well as rigorous error control in numerical
+computations. These codes are written in C++, a low level programming language.
+So users spends time on technical aspects of with the programming
+language rather than focusing on the chemistry. A solution to this problem
+is the \ac{VAMPyR}. \ac{VAMPyR} is a python program packaged built upon \ac{MRCPP}
+and \ac{MRChem}. \ac{VAMPyR} can be used to develop everything, that
+can be developed using \ac{MRCPP} and \ac{MRChem}.Though
+python the users has access to powerful libraries for computation and
+visualization such as NumPy, SciPy and Pyplot.
 
 \section{Project goals}
+The goal of this project is to create \ac{VAMPyR} tutorials in Jupyter Notebooks.
+These will ensure an easy and interactive entry-point
+for new users. Containing five milestones:
+
+\begin{enumerate}
+    \item Tutorial of how to use  \ac{VAMPyR} with NumPy, SciPy and Pyplot.
+    \item Tutorial of how to use use exchange functionals from \ac{VAMPyR}
+    \item Tutorial of how to solve \ac{HF} and \ac{KS} equations using \ac{VAMPyR}
+    \item Tutorial of how \ac{VAMPyR} can be used to take solvation effects into
+    account.
+    \item Poster presenting the work at ISTCP-2019
+\end{enumerate}
 
 \section{Implementation}
 
-The Very Accurate Multiresolution Python Routines (VAMPyR\cite{vampyr})
-is a Python package built on top of MRCPP\cite{mrcpp}. MRCPP is a program
-package for multi-resolution analysis using MultiWavelets
-(for instance, Frediani et al\cite{frediani2013fully})
-developed in modern C++ with OpenMP parallelisation.
-This enables fast coding in Python with even faster
-running parallel C++ routines in the background. This combined with
-powerful Python packages such as NumPy\cite{numpy} and SciPy\cite{SciPy}
-makes it an extremely powerful tool for prototyping ideas, that can be implemented
-into MRChem\cite{mrchem}. To summarize, VAMPyR can be used to prototype
-new ideas. Then the VAMPyR implementation can be used as a reference when
-finished product is being implemented into MRChem\cite{mrchem}. Where it can
-be used to study molecular or crystal like properties. In the end reducing
-the time between the idea and the publication. To make VAMPyR attractive
-for chemists is a manual containing good documentation and a thorough tutorial
-of how to utilize VAMPyR.
+VAMPyR has extensive tests of the implementation. The student can use these
+combined with the documentations of \ac{MRCPP} and \ac{MRChem} to implement
+the first milestone.
 
-The tutorial is to be implemented in Jupyter Notebooks, which will
-give an interactive and, try for yourself and see of it works,
-introduciton to VAMPyR.
-The tutorial should contain examples of energy calculations using
-both Hartree-Fock (HF) and Density Functional Theory (DFT), both on
-molecular and crystalline(@Luca usikker på ordet der) systems.
+The second milestone can be achieved by studying how exchange functionals
+are used within \ac{MRChem}. From this examples of how to use it using VAMPyR
+can be generated.
 
-The work will conclude with a poster presentation at the ISTCP
-2019\cite{istcp} in Tromso.
+The third milestone can be achieved by studying implementations of the
+\ac{HF} and \ac{KS} equations within \ac{MRChem}, alongside this the
+thesis of S. R. Jensen can be used as a reference to explain the
+theoretical aspects of the implementation.
+
+The forth milestone can be used by studying the solvation implementation
+in \ac{MRChem}, combind with the master thesis of Gabriel Gerez explaining
+the theoretical aspects of the implementation.
+
+At last the student will present the work on a poster at ISTCP-2019.
+
+
+The work will be supervised by Ass.~Prof.~ Luca Frediani and Research Fellow
+Magnar Bj\o rgve.
 
 \section{Budget}
 

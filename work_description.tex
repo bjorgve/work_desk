@@ -1,31 +1,92 @@
 \documentclass[12pt]{article}
 \usepackage{parskip}
+\usepackage[superscript, biblabel]{cite}
+\usepackage[nolist]{acronym}
+
+\begin{acronym}
+  \acro{DFT}{Density Functional Theory}
+  \acro{HF}{Hartree Fock}
+  \acro{SCF}{self-consistent field}
+  \acro{MW}{Multiwavelet}
+  \acro{MRCPP}{MultiResolution Computation Program Package}
+  \acro{MRChem}{MultiResolution Chemistry}
+  \acro{VAMPyR}{Very Accurate Multiresolution Python Routines}
+  \acro{KS}{Kohn-Sham}
+\end{acronym}
+
 \begin{document}
-The student is to work on developing the Very Accurate Multiresolution
-Python Routines (VAMPyR). VAMPyR is a high level python interface to
-the MRCPP code, developed at the chemistry department at UiT.
 
-Pybind11 is used to expose the C++ routines from mrcpp into python.
-The student is to expand the capabilities of vampyr. This can be
-done by selecting one or several of these independent tasks:
+\title{Bla bla}
 
-1. Make the code structure in VAMPyR, mirror the code structure
-   in MRCPP.
+\maketitle
 
-2. Import functionallity from the MRCHEM code similar to how it is
-   done with MRCPP.
+\section{Background}
 
-3. Solve partial differential equations or chemistry problems using VAMPYR,
-   and Jupyter Notebooks that can be used as code examples in the
-   documentation, in addition to being used as tests of the code.
-   This could also include code examples that can be used in
-   teaching.
+A recent development in quantum chemistry is the use real-space grid
+methods to achieve high precision results within the framework of
+\ac{DFT}. One such method makes use of \ac{MW} as a
+basis\cite{harrison2003multiresolution}
+and is currently being used and further developed at the Hylleraas
+center in Tromsø in the group of Ass.~Prof.~Luca Frediani.
 
-4. Publish the code on the Python Package Index (PyPI).
+The group is involved in developing three codes. The \ac{MRChem} code, which is
+a numerical real-space code for molecular electronic structure calculations
+within the \ac{SCF} approximations of quantum chemistry. This is built on
+the \ac{MRCPP} code, which is a general purpose numerical mathematics library
+based on multiresolution analysis and the \ac{MW} basis which provide
+low-scaling algorithms as well as rigorous error control in numerical
+computations. These codes are written in C++, a low level programming language.
+So users spends time on technical aspects of with the programming
+language rather than focusing on the chemistry. A solution to this problem
+is the \ac{VAMPyR}. \ac{VAMPyR} is a python program packaged built upon \ac{MRCPP}
+and \ac{MRChem}. \ac{VAMPyR} can be used to develop everything, that
+can be developed using \ac{MRCPP} and \ac{MRChem}.Though
+python the users has access to powerful libraries for computation and
+visualization such as NumPy, SciPy and Pyplot.
 
-To deal with these challanges it's required that the student
-has some experience with Python or C/C++. Familiarity with
-git, cmake, jupyter notebooks or Green's functions is an advantage but not
-an requirement.
+\section{Project goals}
+The goal of this project is to create \ac{VAMPyR} tutorials in Jupyter Notebooks.
+These will ensure an easy and interactive entry-point
+for new users. Containing five milestones:
 
+\begin{enumerate}
+    \item Tutorial of how to use  \ac{VAMPyR} with NumPy, SciPy and Pyplot.
+    \item Tutorial of how to use use exchange functionals from \ac{VAMPyR}
+    \item Tutorial of how to solve \ac{HF} and \ac{KS} equations using \ac{VAMPyR}
+    \item Tutorial of how \ac{VAMPyR} can be used to take solvation effects into
+    account.
+    \item Poster presenting the work at ISTCP-2019
+\end{enumerate}
+
+\section{Implementation}
+
+VAMPyR has extensive tests of the implementation. The student can use these
+combined with the documentations of \ac{MRCPP} and \ac{MRChem} to implement
+the first milestone.
+
+The second milestone can be achieved by studying how exchange functionals
+are used within \ac{MRChem}. From this examples of how to use it using VAMPyR
+can be generated.
+
+The third milestone can be achieved by studying implementations of the
+\ac{HF} and \ac{KS} equations within \ac{MRChem}, alongside this the
+thesis of S. R. Jensen can be used as a reference to explain the
+theoretical aspects of the implementation.
+
+The forth milestone can be used by studying the solvation implementation
+in \ac{MRChem}, combind with the master thesis of Gabriel Gerez explaining
+the theoretical aspects of the implementation.
+
+At last the student will present the work on a poster at ISTCP-2019.
+
+
+The work will be supervised by Ass.~Prof.~ Luca Frediani and Research Fellow
+Magnar Bj\o rgve.
+
+\section{Budget}
+
+
+
+\bibliographystyle{unsrt}
+\bibliography{ref.bib}
 \end{document}

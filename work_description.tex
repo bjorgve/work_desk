@@ -1,7 +1,29 @@
 \documentclass[12pt]{article}
 \usepackage{parskip}
 \usepackage[superscript, biblabel]{cite}
+\usepackage{acronym}
+
+\begin{acronym}
+  \acro{DFT}{Density Functional Theory}
+\end{acronym}
+
 \begin{document}
+
+\title{Bla bla}
+
+\maketitle
+
+\section{Background}
+
+A recent development in quantum chemistry is the use real-space grid
+methods to achieve high precision results within the framework of
+\ac{DFT}. One such method makes use of Multiwavelet as a basis\cite{}
+and is curently being used and further developed at the Hylleraas
+centre in Tromsø in the group of Ass.~Prof.~Luca Frediani.
+
+\section{Project goals}
+
+\section{Implementation}
 
 The Very Accurate Multiresolution Python Routines (VAMPyR\cite{vampyr})
 is a Python package built on top of MRCPP\cite{mrcpp}. MRCPP is a program
@@ -29,6 +51,9 @@ molecular and crystalline(@Luca usikker på ordet der) systems.
 
 The work will conclude with a poster presentation at the ISTCP
 2019\cite{istcp} in Tromso.
+
+\section{Budget}
+
 
 
 \bibliographystyle{unsrt}

@@ -10,7 +10,7 @@
   \acro{MW}{Multiwavelet}
   \acro{MRCPP}{MultiResolution Computation Program Package}
   \acro{MRChem}{MultiResolution Chemistry}
-  \acro{VAMPyR}{Very Accurate Multiresolution Python Routines}
+  \acro{vampyr}[VAMPyR]{Very Accurate Multiresolution Python Routines}
   \acro{KS}{Kohn-Sham}
   \acro{API}{Application Programming Interface}
 \end{acronym}
@@ -28,7 +28,7 @@ methods to achieve high precision results within the framework of
 \ac{DFT}. One such method makes use of \acp{MW} as a
 basis\cite{harrison2003multiresolution}
 and is currently being used and further developed at the Hylleraas
-center in Troms\o \, in the group of Ass.~Prof.~Luca Frediani.
+center in Troms\o \, in the group of Ass.~Prof.~Luca Frediani\cite{frediani2013fully}.
 
 The group has developed two codes the last 10 years the \ac{MRChem}\cite{mrchem} and
 the \ac{MRCPP}\cite{mrcpp}.
@@ -43,49 +43,63 @@ C++ developed codes are both fast and robust, but for visualization and
 rapid code development it is inferior Python.
 
 To facilitate rapid code development,
-the \ac{MRChem} group has started to develop a thrid code,
-\ac{VAMPyR}\cite{vampyr}. \ac{VAMPyR} gives access to the
+the \ac{MRChem} group has started to develop a third code,
+\ac{vampyr}\cite{vampyr}. \ac{vampyr} gives access to the
 fast and parallel \ac{API}
-of \ac{MRChem} and \ac{MRCPP} from within Python. Using Pyhon developers can
-combine \ac{VAMPyR} with libaries such as NumPy for linear algebra, matplotlib
-and avogadro for visualization of orbitals, densities, molecular structures
+of \ac{MRChem} and \ac{MRCPP} from within Python. Using Python developers can
+combine \ac{vampyr} with libraries such as NumPy for linear algebra, matplotlib\cite{matplotlib}
+and avogadro\cite{avogadro} for visualization of orbitals, densities, molecular structures
 and unit-cells.
 
 \section{Project goals}
 
-In this project tutorials/templates of how \ac{VAMPyR} can be used to
-develop new quantum chemical methods and how it can be used to visualize
-orbitals, densities, molecular structures and unit-cells.
-The project contains three milestones:
+We will design and implement a set of tutorials and examples
+using Jupyter Notebooks\cite{jupyter} on how
+\ac{vampyr} can be integrated with \ac{MRChem} and \ac{MRCPP} to
+facilitate code development and to provide powerful analysis tools for
+the end-user, such as for example, visualizing orbitals, densities,
+molecular structures and unit-cells.
+
+As a starting point we will consider the following types of tutorials.
 
 \begin{enumerate}
-    \item Tutorial/template of how orbitals, densities, molecular structure and unit cells
-    can be visualized using matplotlib and Avogadro.
-    \item Tutorial of how to solve the \ac{HF} and \ac{KS} equations using \ac{VAMPyR}
-    \item Tutorial of how to include solvation effects in \ac{VAMPyR}.
+    \item Tutorial of how orbitals, densities, molecular structure and unit cells
+    can be visualized using matplotlib, openchemistry and/or avogadro.
+    \item Tutorial of the mathematical tools in \ac{vampyr}.
+    \item Tutorial of how the basic quantum chemical tools of \ac{vampyr}.
+    \item Tutorial of showing how the mathematical tools can be combined
+    with the quantum mechanical tools to solve the
+    the \ac{HF} and \ac{KS} equations.
+    \item Tutorial of how to include solvation effects in \ac{vampyr}.
 \end{enumerate}
+
+The first one is aim at the end-user whereas the other two are more
+for program developers.
 
 \section{Implementation}
 
-VAMPyR has extensive tests of the implementation. The student can use these
-combined with the documentations of \ac{MRCPP} and \ac{MRChem} to implement
-the first milestone.
+To begin with we need to familiarize ourselves with the visualization packages in
+Python.
+Then \ac{vampyr} needs to be extended to such that it generates output objects
+that can be used by the visualization packages as inputs to display orbitals,
+densities, molecular structures and unit-cells. When this is done the tutorial
+will contain guides on how to install and import the packages to Python.
+Then create examples of how the different
+packages can be combined with \ac{vampyr} to visualize, such as, orbitals,
+densities, molecular structures and unit-cells.
 
-The second milestone can be achieved by studying how exchange functionals
-are used within \ac{MRChem}. From this examples of how to use it in VAMPyR
-can be generated.
+The tutorial on the mathematical tools in \ac{vampyr} should begin
+with introducing the mathematical concepts the code, such as
+the function representations, arithmetic operations and integral
+operators. The tutorial should end in a theoretical discussion
+on how to solve \ac{KS}-like equations self-consistently using
+integral operators, and an example of how this can be done
+by \ac{vampyr}.
 
-The third milestone can be achieved by studying implementations of the
-\ac{HF} and \ac{KS} equations within \ac{MRChem}, alongside this the
-thesis of S. R. Jensen can be used as a reference to explain the
-theoretical aspects of the implementation.
-
-The forth milestone can be used by studying the solvation implementation
-in \ac{MRChem}, combind with the master thesis of Gabriel Gerez explaining
-the theoretical aspects of the implementation.
-
-At last the student will present the work on a poster at ISTCP-2019
-
+For the tutorial on how \ac{vampyr} can be used to solve the restricted-\ac{HF},
+the tutorial should begin with a theoretical overview covering the theoretical
+aspects of the implementation. Then an example system should be implemented
+to calculate the energy on a simple molecular system.
 
 The work will be supervised by Ass.~Prof.~Luca Frediani and Research Fellow
 Magnar Bj\o rgve.

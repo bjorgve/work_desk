@@ -12,50 +12,57 @@
   \acro{MRChem}{MultiResolution Chemistry}
   \acro{VAMPyR}{Very Accurate Multiresolution Python Routines}
   \acro{KS}{Kohn-Sham}
+  \acro{API}{Application Programming Interface}
 \end{acronym}
 
 \begin{document}
 
-\title{Bla bla}
+\title{VAMPyR}
 
 \maketitle
 
 \section{Background}
 
-A recent development in quantum chemistry is the use real-space grid
+A recent development in quantum chemistry is the use of real-space grid
 methods to achieve high precision results within the framework of
-\ac{DFT}. One such method makes use of \ac{MW} as a
+\ac{DFT}. One such method makes use of \acp{MW} as a
 basis\cite{harrison2003multiresolution}
 and is currently being used and further developed at the Hylleraas
-center in Tromsø in the group of Ass.~Prof.~Luca Frediani.
+center in Troms\o \, in the group of Ass.~Prof.~Luca Frediani.
 
-The group is involved in developing three codes. The \ac{MRChem}\cite{mrchem} code, which is
+The group has developed two codes the last 10 years the \ac{MRChem}\cite{mrchem} and
+the \ac{MRCPP}\cite{mrcpp}.
+\ac{MRChem}, is
 a numerical real-space code for molecular electronic structure calculations
-within the \ac{SCF} approximations of quantum chemistry. This is built on
-the \ac{MRCPP}\cite{mrcpp} code, which is a general purpose numerical mathematics library
+within the \ac{SCF} approximation of quantum chemistry. This is built on
+\ac{MRCPP}, which is a general purpose numerical mathematics library
 based on multiresolution analysis and the \ac{MW} basis which provide
 low-scaling algorithms as well as rigorous error control in numerical
 computations. These codes are written in C++, a low level programming language.
-So users spends time on technical aspects of with the programming
-language rather than focusing on the chemistry. A solution to this problem
-is the \ac{VAMPyR}\cite{vampyr}. \ac{VAMPyR} is a python program packaged built upon \ac{MRCPP}
-and \ac{MRChem}. \ac{VAMPyR} can be used to develop everything, that
-can be developed using \ac{MRCPP} and \ac{MRChem}.Though
-python the users has access to powerful libraries for computation and
-visualization such as NumPy, SciPy and Pyplot.
+C++ developed codes are both fast and robust, but for visualization and
+rapid code development it is inferior Python.
+
+To facilitate rapid code development,
+the \ac{MRChem} group has started to develop a thrid code,
+\ac{VAMPyR}\cite{vampyr}. \ac{VAMPyR} gives access to the
+fast and parallel \ac{API}
+of \ac{MRChem} and \ac{MRCPP} from within Python. Using Pyhon developers can
+combine \ac{VAMPyR} with libaries such as NumPy for linear algebra, matplotlib
+and avogadro for visualization of orbitals, densities, molecular structures
+and unit-cells.
 
 \section{Project goals}
-The goal of this project is to create \ac{VAMPyR} tutorials in Jupyter Notebooks.
-These will ensure an easy and interactive entry-point
-for new users. Containing five milestones:
+
+In this project tutorials/templates of how \ac{VAMPyR} can be used to
+develop new quantum chemical methods and how it can be used to visualize
+orbitals, densities, molecular structures and unit-cells.
+The project contains three milestones:
 
 \begin{enumerate}
-    \item Tutorial of how to use  \ac{VAMPyR} with NumPy, SciPy and Pyplot.
-    \item Tutorial of how to use use exchange functionals from \ac{VAMPyR}
-    \item Tutorial of how to solve \ac{HF} and \ac{KS} equations using \ac{VAMPyR}
-    \item Tutorial of how \ac{VAMPyR} can be used to take solvation effects into
-    account.
-    \item Poster presenting the work at ISTCP-2019\cite{istcp}
+    \item Tutorial/template of how orbitals, densities, molecular structure and unit cells
+    can be visualized using matplotlib and Avogadro.
+    \item Tutorial of how to solve the \ac{HF} and \ac{KS} equations using \ac{VAMPyR}
+    \item Tutorial of how to include solvation effects in \ac{VAMPyR}.
 \end{enumerate}
 
 \section{Implementation}
@@ -65,7 +72,7 @@ combined with the documentations of \ac{MRCPP} and \ac{MRChem} to implement
 the first milestone.
 
 The second milestone can be achieved by studying how exchange functionals
-are used within \ac{MRChem}. From this examples of how to use it using VAMPyR
+are used within \ac{MRChem}. From this examples of how to use it in VAMPyR
 can be generated.
 
 The third milestone can be achieved by studying implementations of the
@@ -74,20 +81,16 @@ thesis of S. R. Jensen can be used as a reference to explain the
 theoretical aspects of the implementation.
 
 The forth milestone can be used by studying the solvation implementation
-in \ac{MRChem}, combind with the master thesis of Gabriel Gerez (to be submitted) explaining
+in \ac{MRChem}, combind with the master thesis of Gabriel Gerez explaining
 the theoretical aspects of the implementation.
 
-At last the student will present the work on a poster at ISTCP-2019.
+At last the student will present the work on a poster at ISTCP-2019
 
 
 The work will be supervised by Ass.~Prof.~Luca Frediani and Research Fellow
 Magnar Bj\o rgve.
 
 \section{Budget}
-
-\begin{tabular}{l, c}
-    ISTCP participation fee: && 2250 NOK
-\end{tabular}
 
 
 
